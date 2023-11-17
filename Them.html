@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <Title>Data Entry</Title>
+    </head>
+    <body>
+        <script>
+        
+        function MyFunction(){
+            
+            let x    = document.getElementById("Places").value;
+            let text = document.getElementById("meals").value;
+            
+            if(isNaN(x) == true || text == "")
+            {
+                alert("Bad data");
+                return false;
+            }
+            
+        }
+        
+        const form = document.querySelector('#saveData');
+        form.addEventListener('submit', function (e) ) {
+    // prevent the form from submitting
+    MyFunction();
+   e.preventDefault();
+        });
+        </script>
+        
+        <h1>Enter Data</h1>
+        <form id="saveData" action="Save.php" method="post">
+            <p>
+               <label for="Places">Places:</label>
+               <input type="text" name="places" id="Places">
+            </p>
+            <p>
+                <label for="MealType">Meal Type:</label>
+                <input type="text" name="meals" id="meals">
+            </p>
+            <input type="submit" value="Submit" onclick="MyFunction()">
+        </form>
+    </body>
+</html>
